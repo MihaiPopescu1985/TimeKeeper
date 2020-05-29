@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>TimeKeeper</display-name>
+
+  <welcome-file-list>
+    <welcome-file>Index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>IndexServlet</servlet-name>
+  	<servlet-class>timekeeper.controller.IndexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>IndexServlet</servlet-name>
+  	<url-pattern>/Index</url-pattern>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DevicesServlet</servlet-name>
+    <servlet-class>timekeeper.controller.DevicesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DevicesServlet</servlet-name>
+    <url-pattern>/Devices</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProjectsServlet</servlet-name>
+    <servlet-class>timekeeper.controller.ProjectsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProjectsServlet</servlet-name>
+    <url-pattern>/Projects</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>WorkdaysServlet</servlet-name>
+    <servlet-class>timekeeper.controller.WorkdaysServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WorkdaysServlet</servlet-name>
+    <url-pattern>/Workdays</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>WorkersServlet</servlet-name>
+    <servlet-class>timekeeper.controller.WorkersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WorkersServlet</servlet-name>
+    <url-pattern>/Workers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddModel</servlet-name>
+    <servlet-class>timekeeper.controller.AddModelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddModel</servlet-name>
+    <url-pattern>/AddModel</url-pattern>
+  </servlet-mapping>
+</web-app>
