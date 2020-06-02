@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1>Devices</h1>
-  <a href="/TimeKeeper/Pages/UpdateDevice.jsp">Add a device.</a>
+  <a href="/TimeKeeper/Pages/CreateDevice.jsp">Add a device.</a>
   <br>
   <table id="devicesTable" border="1">
   	<tr>

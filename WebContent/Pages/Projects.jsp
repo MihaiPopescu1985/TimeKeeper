@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1>Projects</h1>
-  <a href="/TimeKeeper/Pages/UpdateProject.jsp">Add a project.</a>
+  <a href="/TimeKeeper/Pages/CreateProject.jsp">Add a project.</a>
   <br>
   <table id="projectsTable" border="1">
     <tr>

@@ -25,7 +25,7 @@ public class SocketClient implements Runnable {
 	private static SocketClient Instance;
 	private static Socket Client;
 	
-	private static final String IP = "192.168.0.101";
+	private static final String IP = "192.168.0.100";
 	private static final int PORT = 1234;
 	
 	private static byte[] input = new byte[1024];
@@ -68,9 +68,10 @@ public class SocketClient implements Runnable {
 			}
 			
 		} catch (IOException e) {
-			System.out.println(e.getMessage());
+			//System.out.println("Error establishing connection with device: " + e.getMessage());
+			e.printStackTrace();
 		} catch (InterruptedException e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error sleeping thread: " + e.getMessage());
 		}
 	}
 	

@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1>Workdays</h1>
-  <a href="/TimeKeeper/Pages/UpdateWorkday.jsp">Add workday</a>
+  <a href="/TimeKeeper/Pages/CreateWorkday.jsp">Add workday</a>
   <br>
   <table id="workdaysTable" border="1">
     <tr>

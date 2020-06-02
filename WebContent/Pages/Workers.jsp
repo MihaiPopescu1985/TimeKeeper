@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1>Workers</h1>
-  <a href="/TimeKeeper/Pages/UpdateWorker.jsp">Add new worker.</a>
+  <a href="/TimeKeeper/Pages/CreateWorker.jsp">Add new worker.</a>
   <br>
   <table id="workersTable" border="1">
     <tr>

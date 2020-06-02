@@ -1,6 +1,8 @@
 package timekeeper.controller;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,27 +24,41 @@ public class AddModelServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/*
-		System.out.println(request.getParameter("DeviceDescription"));
-		Map<String, String[]> map = request.getParameterMap();
-		System.out.println(map.get("DeviceDescription")[0]);
-*/		
-		String model = request.getParameter("model");
+
+		String model = (String) request.getParameter("model");
 		
 		if (model.contentEquals("device")) {
-			Device device = ParseModels.getDevice(request.getParameterMap());
-			dbService.addDevice(device);
+			Device device = new Device(
+					0
+					, request.getParameter("DeviceDescription")
+					, request.getParameter("DeviceIp")
+					, Integer.valueOf(request.getParameter("ProjectId")));
 		}
 		else if (model.contentEquals("project")) {
-			Project project = ParseModels.getProject(request.getParameterMap());
+			Project project = new Project(
+					0
+					, request.getParameter("RoNumber")
+					, request.getParameter("GeNumber")
+					, request.getParameter("Description")
+					, request.getParameter("DeviceIp"));
 			dbService.addProject(project);
 		}
 		else if (model.contentEquals("workday")) {
-			Workday workday = ParseModels.getWorkday(request.getParameterMap());
+			Workday workday = new Workday(
+					0
+					, Integer.valueOf(request.getParameter("WorkerId").toString())
+					, Integer.valueOf(request.getParameter("ProjectId").toString())
+					, LocalDateTime.parse(request.getParameter("StartHour").toString())
+					, LocalDateTime.parse(request.getParameter("StopHour").toString()));
 			dbService.addWorkday(workday);
 		}
 		else if (model.contentEquals("worker")) {
-			Worker worker = ParseModels.getWorker(request.getParameterMap());
+			Worker worker = new Worker(
+					0
+					, request.getParameter("FirstName")
+					, request.getParameter("LastName")
+					, request.getParameter("TagId")
+					, request.getParameter("Department"));
 			dbService.addWorker(worker);
 		}
 		response.sendRedirect("/TimeKeeper");

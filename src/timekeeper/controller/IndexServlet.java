@@ -21,8 +21,6 @@ public class IndexServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-
-			
 		response.sendRedirect(request.getContextPath() + "/Pages/Index.jsp");
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
